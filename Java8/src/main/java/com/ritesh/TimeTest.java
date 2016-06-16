@@ -12,8 +12,8 @@ import java.time.temporal.ChronoUnit;
 public class TimeTest {
 	public static void main(String[] args) {
 		String inputDate = "Mar-23-2016";
-		long dayId = U.getDayId(inputDate);
-		U.p("DATE: " + inputDate + ", dayID: " + dayId);
+		long dayId = getDayId(inputDate);
+		System.out.println(("DATE: " + inputDate + ", dayID: " + dayId));
 		// Current Date
 		LocalDate today = LocalDate.now();
 		System.out.println("Current Date=" + today);
@@ -106,6 +106,14 @@ public class TimeTest {
 		 * InstantFormatter formatter2 =InstantFormatter.ofPattern("MMM-d-yyyy HH:mm:ss"); String input2="Jan-7-2002"+" 00:00:00"; Instant
 		 * instantX = Instant.parse(input, formatter); U.p(instantX+":00Z");
 		 */
+	}
+
+	public static long getDayId(String inputDate) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM-d-yyyy HH:mm:ss");
+		LocalDateTime frEpochTime = LocalDateTime.parse("Jan-1-2001 00:00:00", formatter);
+		LocalDateTime targetTime = LocalDateTime.parse(inputDate + " 00:00:00", formatter);
+		long dayCount = ChronoUnit.DAYS.between(frEpochTime, targetTime);
+		return dayCount;
 	}
 
 }
