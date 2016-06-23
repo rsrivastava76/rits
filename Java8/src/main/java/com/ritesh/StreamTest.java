@@ -1,4 +1,4 @@
-package main.java.com.ritesh;
+package com.ritesh;
 
 import java.util.ArrayList;
 import java.util.List;

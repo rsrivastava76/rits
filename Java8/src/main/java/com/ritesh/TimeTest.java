@@ -1,4 +1,4 @@
-package main.java.com.ritesh;
+package com.ritesh;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -10,6 +10,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 public class TimeTest {
+
 	public static void main(String[] args) {
 		String inputDate = "Mar-23-2016";
 		long dayId = getDayId(inputDate);
@@ -41,7 +42,7 @@ public class TimeTest {
 
 		LocalDate hundredDay2014 = LocalDate.ofYearDay(2014, 100);
 		System.out.println("100th day of 2014=" + hundredDay2014);
-		U.p("================================");
+		System.out.println("================================");
 		// Current Time
 		LocalTime time = LocalTime.now();
 		System.out.println("Current Time=" + time);
@@ -66,7 +67,7 @@ public class TimeTest {
 		// Getting date from the base date i.e 01/01/1970
 		LocalTime specificSecondTime = LocalTime.ofSecondOfDay(10000);
 		System.out.println("10000th second time= " + specificSecondTime);
-		U.p("================================");
+		System.out.println("================================");
 		// Format examples
 		LocalDate date = LocalDate.now();
 		// default format
@@ -90,18 +91,18 @@ public class TimeTest {
 		// Parse examples
 		LocalDateTime dt = LocalDateTime.parse("27::Apr::2014 21::39::48", DateTimeFormatter.ofPattern("d::MMM::uuuu HH::mm::ss"));
 		System.out.println("Default format after parsing = " + dt);
-		U.p("================================");
+		System.out.println("================================");
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM-d-yyyy HH:mm:ss");
 		LocalDateTime frEpochTime = LocalDateTime.parse("Jan-1-2001 00:00:00", formatter);
 		// GET DAY NUMBER FROM DATE
 		String input = "Apr-5-2016";
 		LocalDateTime targetTime = LocalDateTime.parse(input + " 00:00:00", formatter);
 		long dayCount = ChronoUnit.DAYS.between(frEpochTime, targetTime);
-		U.p(input + ": " + dayCount);
+		System.out.println(input + ": " + dayCount);
 
 
 		LocalDateTime endTime = LocalDateTime.parse(input + " 23:59:59", formatter);
-		U.p(targetTime + ":00Z" + " - " + endTime + ":00Z");
+		System.out.println(targetTime + ":00Z" + " - " + endTime + ":00Z");
 		/*
 		 * InstantFormatter formatter2 =InstantFormatter.ofPattern("MMM-d-yyyy HH:mm:ss"); String input2="Jan-7-2002"+" 00:00:00"; Instant
 		 * instantX = Instant.parse(input, formatter); U.p(instantX+":00Z");
