@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function validate(){
+	alert("in side function");
+	return false;
+}
+
+var s = "Hi";
+var numbers = [4,8,10,324,654];
+
+
+var student = {
+	id : 123,
+	name : "Ritesh Srivastava",
+	address : " p-4095"
+}
+
+var sudents = [
+{
+	id : 123,
+	name : "Ritesh Srivastava",
+	address : " p-4095"
+},              
+{
+	id : 124,
+	name : "Shikha Bachchan",
+	address : " p-4095"
+}               
+];
+
+</script>
+
+</head>
+<body>
+<form action="page2.html" method="get" name="registration" onsubmit="return validate();">
+userName : <input value="" type="email" name="email"> </br>
+Password : <input type="password" name="pwd" > </br>
+Re type Password : <input type="password" name="pwd1" > </br>
+I agree to the terms and conditions : <input name="agreement" type="checkbox"> </br>
+
+<input type="submit" value = "submit">
+</form>
+
+</body>
+
+<script type="text/javascript">
+
+</script>
+</html>

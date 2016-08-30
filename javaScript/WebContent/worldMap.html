@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jVectorMap demo</title>
+  <link rel="stylesheet" href="jquery-jvectormap.css" type="text/css" media="screen"/>
+  <script src="jquery-1.8.2.js"></script>
+  <script src="jquery-jvectormap-2.0.3.min.js"></script>
+  <script src="jquery-jvectormap-world-mill-en.js"></script>
+</head>
+<body>  
+   
+   
+   <div id="world-map-gdp" style="width: 800px; height: 400px; border:1px solid #dddddd;"></div>
+  
+  <script>
+  
+  var gdpData = {
+		  "DZ":0.01,
+		  "AO":0.04,
+		  "AR":0.47,
+		  "AU":2.53,
+		  "AT":0.55,
+		  "BB":0.00,
+		  "BE":0.99,
+		  "BM":0.00,
+		  "BR":2.68,
+		  "BG":0.06,
+		  "CA":4.11,
+		  "CL":0.40,
+		  "CO":0.59,
+		  "CR":0.07,
+		  "HR":0.11,
+		  "CY":0.01,
+		  "CZ":0.37,
+		  "DK":0.85,
+		  "EC":0.08,
+		  "EG":0.26,
+		  "EE":0.01,
+		  "FI":0.51,
+		  "FR":3.16,
+		  "DE":4.91,
+		  "GH":0.02,
+		  "GR":0.11,
+		  "HK":0.54,
+		  "HU":0.61,
+		  "IN":3.59,
+		  "ID":0.36,
+		  "IE":0.95,
+		  "IL":0.26,
+		  "IT":2.17,
+		  "JM":0.02,
+		  "JP":3.08,
+		  "KE":0.16,
+		  "KW":0.01,
+		  "LV":0.01,
+		  "LT":0.02,
+		  "MY":0.51,
+		  "MU":0.02,
+		  "MX":1.03,
+		  "ME":0.01,
+		  "MA":0.06,
+		  "NL":1.66,
+		  "NZ":0.19,
+		  "NG":0.09,
+		  "NO":0.29,
+		  "PK":0.12,
+		  "CN":2.15,
+		  "PE":0.31,
+		  "PH":0.26,
+		  "PL":0.58,
+		  "PT":0.18,
+		  "QA":0.07,
+		  "TW":0.41,
+		  "KR":0.73,
+		  "RO":0.25,
+		  "RU":0.67,
+		  "SA":0.18,
+		  "SN":0.02,
+		  "RS":0.05,
+		  "SG":1.92,
+		  "SK":0.29,
+		  "SI":0.14,
+		  "ZA":0.62,
+		  "ES":1.61,
+		  "LK":0.02,
+		  "SE":0.98,
+		  "CH":1.28,
+		  "TZ":0.02,
+		  "TH":0.34,
+		  "TT":0.01,
+		  "TN":0.05,
+		  "TR":0.47,
+		  "UA":0.05,
+		  "AE":0.90,
+		  "GB":6.16,
+		  "US":40.35,
+		  "UY":0.08,
+		  "VE":0.09,
+		  "VN":0.16,
+		};
+  
+  $(function(){
+      
+      $('#world-map-gdp').vectorMap({
+    	  map: 'world_mill',
+    	  series: {
+    	    regions: [{
+    	      values: gdpData,
+    	      scale: ['#daeced', '#55b9bf'],
+    	      normalizeFunction: 'polynomial'
+    	    }]
+    	  },
+    	  onRegionTipShow: function(e, el, code){
+    	    el.html(el.html()+' ('+gdpData[code]+')');
+    	  }
+    	});
+      
+    });
+  </script>
+  
+  
+</body>
+</html>
