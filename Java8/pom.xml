@@ -13,7 +13,7 @@
 
 
 	<dependencies>
-		<dependency>
+		<!--   dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongodb-driver</artifactId>
 			<version>3.2.2</version>
@@ -29,7 +29,7 @@
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongodb-driver-core</artifactId>
 			<version>3.2.2</version>
-		</dependency>
+		</dependency>-->
 	</dependencies>
 
 	<build>

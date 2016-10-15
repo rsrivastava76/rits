@@ -1,21 +1,5 @@
 package main.java.com.firstrain.similarity;
 
-import java.util.*;
-/*
-NEW PHRASE DB:
-*** REMEMBER THERE ARE NOW DUPES IN THESE LISTS
-*** MUST NOW ALLOW COMBINED FEATURE SETS
-*** MUST REMEBER TO LowerCase THE FEATURES
-
-DEPLOYMENT
-cd msb
-javac -cp .;../../lib/gson-2.5.jar;../../lib/mapdb-2.0.0.jar *.java
-
-cd ..
-java -cp .;../lib/gson-2.5.jar;../lib/mapdb-2.0.0.jar msb.SimCalcManager
-*/
-
-
 public class Globals {
 
     public static String TARGET_SOLR_URL="http://pdsmysql1-rl.ca.firstrain.net:8080/solr/ExtractedPhrasesNew/"; // Temporary, with docs from Jan 1.

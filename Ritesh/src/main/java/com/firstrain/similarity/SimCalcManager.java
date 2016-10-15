@@ -1,25 +1,17 @@
 package main.java.com.firstrain.similarity;
 
-import java.util.*;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-
-import java.util.*;
-import java.net.*;
-import java.io.*;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.ResultSet;
-import javax.sql.DataSource;
-//import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
 public class SimCalcManager {
     private static String targetSolrUrl=Globals.TARGET_SOLR_URL;
@@ -55,7 +47,6 @@ public class SimCalcManager {
         JsonParser parser = new JsonParser();
         JsonArray latestDocs = parser.parse(data).getAsJsonObject().get("response").getAsJsonObject().get("docs").getAsJsonArray();
         U.p("\n\n\nDOCS TODAY: "+latestDocs.size());
-        int count=0;
         Map<String,List<String>> groups=new HashMap<>();
         Map<String,List<String>> clusters=new HashMap<>();
         for (JsonElement doc: latestDocs) {
@@ -68,7 +59,6 @@ public class SimCalcManager {
                 clusters.get(oneDoc.clusterId).add(oneDoc.siteDocId);
                 //U.p("DOC ANALYZED: "+oneDoc.siteDocId+", "+oneDoc.groupId+", "+oneDoc.clusterId+", SIZE: "+clusters.get(oneDoc.clusterId).size()+", "+oneDoc.clusterEvidence);
             } catch (Exception e) {U.p("ERROR: "+e);e.printStackTrace();}
-            count++; 
         }
         U.p("STREAM DOC GROUPINGS: "+stream.configObject.STREAM_CAT_IDS+"\t"+latestDocs.size()+"\t"+groups.keySet().size()+"\t"+clusters.keySet().size());
     }
@@ -85,7 +75,6 @@ public class SimCalcManager {
         JsonParser parser = new JsonParser();
         JsonArray latestDocs = parser.parse(data).getAsJsonObject().get("response").getAsJsonObject().get("docs").getAsJsonArray();
         U.p("\n\n\nDOCS TODAY: "+latestDocs.size());
-        int count=0;
         Map<String,List<String>> groups=new HashMap<>();
         Map<String,List<String>> clusters=new HashMap<>();
 		for (JsonElement doc: latestDocs) {
@@ -98,7 +87,6 @@ public class SimCalcManager {
 				clusters.get(oneDoc.clusterId).add(oneDoc.siteDocId);
 				//U.p("DOC ANALYZED: "+oneDoc.siteDocId+", "+oneDoc.groupId+", "+oneDoc.clusterId+", SIZE: "+clusters.get(oneDoc.clusterId).size()+", "+oneDoc.clusterEvidence);
             } catch (Exception e) {U.p("ERROR: "+e);e.printStackTrace();}
-            count++; 
         }
         U.p("STREAM DOC GROUPINGS: "+stream.configObject.STREAM_CAT_IDS+"\t"+latestDocs.size()+"\t"+groups.keySet().size()+"\t"+clusters.keySet().size());
     }

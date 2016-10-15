@@ -12,7 +12,7 @@ public class TestHashMap {
 		 */
 		System.out.println("Using plain hash map with balanced trees:");
 
-		HashMap stringMap = new HashMap();
+		HashMap<String, String> stringMap = new HashMap<String, String>();
 
 		for (int i = 0; i < 100; ++i) {
 			stringMap.put("index_" + i, String.valueOf(i));
@@ -25,7 +25,7 @@ public class TestHashMap {
 		 */
 		System.out.println("Using LinkedHashMap:");
 
-		LinkedHashMap linkedHashMap = new LinkedHashMap();
+		LinkedHashMap<String, String> linkedHashMap = new LinkedHashMap<String,String>();
 
 		for (int i = 0; i < 100; ++i) {
 			linkedHashMap.put("index_" + i, String.valueOf(i));

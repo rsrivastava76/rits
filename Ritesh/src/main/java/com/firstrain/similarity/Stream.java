@@ -1,14 +1,15 @@
 package main.java.com.firstrain.similarity;
 
-import java.io.*;
-import java.util.*;
-import java.time.*;
-import java.net.*;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
+import java.io.Serializable;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 public class Stream implements Serializable {
@@ -39,7 +40,6 @@ public class Stream implements Serializable {
         // FROM EACH DAY'S DOCS, COLLECT FEATURE WORDS (IN SET) THEN COMBINE TO MAKE A BIG LIST WITH REPEATS BY DAY
         for (int targetDay=configObject.BACKGROUND_START_DAY_ID; targetDay<configObject.BACKGROUND_START_DAY_ID+configObject.DAYS_IN_BACKGROUND_INTERVAL; targetDay++) {
             Set<String> thisDaysWords =  new HashSet<String>();
-            LocalDate today = LocalDate.now();
             String urlEncodedCatIdFilterForSolr=null;
             String catIdFilterForSolr="("+configObject.STREAM_CAT_IDS.replace(","," ")+")";
             try {urlEncodedCatIdFilterForSolr=URLEncoder.encode(catIdFilterForSolr,"UTF-8");} catch (Exception e) {U.p("CHARACTER ENCODING ISSUE"); e.printStackTrace();}

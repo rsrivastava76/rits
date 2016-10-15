@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><projectDescription>
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
 	<name>Ritesh</name>
-	<comment/>
+	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
@@ -9,8 +10,8 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
-	<buildCommand><name>org.eclipse.m2e.core.maven2Builder</name><arguments/></buildCommand></buildSpec>
+	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
-	<nature>org.eclipse.m2e.core.maven2Nature</nature></natures>
+	</natures>
 </projectDescription>

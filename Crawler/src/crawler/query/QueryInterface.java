@@ -3,8 +3,6 @@ package crawler.query;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-import crawler.datamodel.CrawlerDataModel;
-
 public class QueryInterface implements Runnable {
 
 	public void run() {

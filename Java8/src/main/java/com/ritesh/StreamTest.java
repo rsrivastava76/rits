@@ -26,7 +26,7 @@ public class StreamTest {
 		// Java 8 Streams Example 1 : Filtering Collection elements
 		// Filtering buy and sell order using filter() method of java.util.Stream class
 		Stream<Order> stream = orderBook.stream();
-		Stream buyOrders = stream.filter((Order o) -> o.side().equals(Order.Side.BUY));
+		Stream<Order> buyOrders = stream.filter((Order o) -> o.side().equals(Order.Side.BUY));
 		System.out.println("No of Buy Order Placed :" + buyOrders.count());
 
 		Stream<Order> sellOrders = orderBook.stream().filter((Order o) -> o.side() == Order.Side.SELL);

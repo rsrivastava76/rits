@@ -1,7 +1,6 @@
 package main.java.com.firstrain.similarity;
 
-import java.util.*;
-import java.io.*;
+import java.io.Serializable;
 
 public class ConfigObject implements Serializable {
     public ConfigObject() {}
